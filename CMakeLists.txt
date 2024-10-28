@@ -138,11 +138,11 @@ else()
     set(REDIS_PLUS_PLUS_DEPENDS "hiredis")
 endif()
 
-list(APPEND REDIS_PLUS_PLUS_HIREDIS_LIBS hiredis::hiredis)
+list(APPEND REDIS_PLUS_PLUS_HIREDIS_LIBS hiredis)
 
 if(REDIS_PLUS_PLUS_USE_TLS)
     find_package(hiredis_ssl REQUIRED)
-    list(APPEND REDIS_PLUS_PLUS_HIREDIS_LIBS hiredis::hiredis_ssl)
+    list(APPEND REDIS_PLUS_PLUS_HIREDIS_LIBS hiredis_ssl)
     find_package(OpenSSL REQUIRED)
     list(APPEND REDIS_PLUS_PLUS_HIREDIS_LIBS ${OPENSSL_LIBRARIES})
 endif()
